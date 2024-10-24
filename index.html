@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/08e06746d6.js" crossorigin="anonymous"></script>
+    <title>EverChest Guide</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <button id="menu-toggle">≡</button>
+        <h1>Ever Chest : Ultimate Guide</h1>
+        <div style="width: 30px;"></div>
+    </header>
+    <nav id="sidebar">
+        <button id="close-sidebar">✕</button>
+        <div id="sidebar-content">
+            <ul>
+                <li><a href="#" onclick="openTab(event, 'welcome'); closeSidebar();">Welcome</a></li>
+                <li><a href="#" onclick="openTab(event, 'class'); closeSidebar();">Class Hero</a></li>
+                <li><a href="#" onclick="openTab(event, 'heroes'); closeSidebar();">Companions</a></li>
+                <li><a href="#" onclick="openTab(event, 'back'); closeSidebar();">Back</a></li>
+                <li><a href="#" onclick="openTab(event, 'artifact'); closeSidebar();">Artifacts</a></li>
+                <li><a href="#" onclick="openTab(event, 'pet'); closeSidebar();">Pets</a></li>
+                <li><a href="#" onclick="openTab(event, 'disclaimer-info'); closeSidebar();">Disclaimer</a></li>
+            </ul>
+        </div>
+        <button id="dark-mode-toggle">Toggle Theme</button>
+    </nav>
+
+    <div class="container">
+        <div id="welcome" class="tab-content active">
+            <div class="welcome-header">
+                <h2>WELCOME</h2>
+                <div class="discord-icon">
+                    <style>
+                        .fa-brands{
+                            font-size: 36pt;
+                        }
+                    </style>
+                    <a href="https://bit.ly/3ZhAKKR" target="_blank">
+                        <i class="fa-brands fa-discord" title="Join Our Discord"></i>
+                    </a>
+                </div>
+            </div>
+            <p>Click the button " ≡ " on top-left for quick access </p>
+            <img src="Images/everchest.gif" alt="Sword Everchest">
+            <div class="button-container">
+                <button onclick="openTab(event, 'class')" class="welcome-button">Class Hero</button>
+                <button onclick="openTab(event, 'heroes')" class="welcome-button">Companions</button>
+                <button onclick="openTab(event, 'back')" class="welcome-button">Back</button>
+                <button onclick="openTab(event, 'artifact')" class="welcome-button">Artifacts</button>
+                <button onclick="openTab(event, 'pet')" class="welcome-button">Pets</button>
+                <button onclick="openTab(event, 'disclaimer-info')" class="welcome-button">Disclaimer</button>
+            </div>
+        </div>
+
+        <div id="heroes" class="tab-content" style="display: none;">
+            <div id="hero-filter">
+                <label for="tier-select">Filter by Tier:</label>
+                <select id="tier-select" onchange="filterHeroes()">
+                    <option value="all">All</option>
+                    <option value="S">S</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>                    
+                </select>
+            </div>
+            <div id="hero-container">
+                <div class="hero-section" style="display: block;">
+                    <div class="hero-card">
+                        <img src="./Images/banshee.png" alt="Mirror Banshee" class="hero-image">
+                        <div class="hero-info">
+                            <div class="hero-name">Mirror Banshee</div>
+                            <div class="hero-rating" data-tier="B">Tier: B</div>
+                        </div>
+                        <button class="detail-button" onclick="toggleDetails('hero01')">Details</button>
+                    </div>
+                    <div id="hero01" class="hero-details" style="display: none; block;">
+                        <h3 class="hero-details-heading">Stats</h3>
+                        <ul class="hero-stats-list">
+                            <li>
+                                <span class="stat-label">VIT:</span>
+                                <span class="stat-value">44572</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">STR:</span>
+                                <span class="stat-value">43891</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">INT:</span>
+                                <span class="stat-value">45208</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">DEX:</span>
+                                <span class="stat-value">43290</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">PDEF:</span>
+                                <span class="stat-value">22093</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">MDEF:</span>
+                                <span class="stat-value">22155</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">MAS:</span>
+                                <span class="stat-value">21487</span>            
+                            </li><li>
+                                <span class="stat-label">RES:</span>
+                                <span class="stat-value">21647</span>            
+                            </li>
+                        </ul>
+                        <h3 class="hero-details-heading">Story Info</h3>
+                        <p class="hero-description">
+                            "Weather she's a prisoner of the mirror or the mirror itself,
+                            even she cannont say for certain. She and the mirror have long
+                            since become one."
+                            <br>
+                            <br>
+                            "This confinement granted her unexpected magic, turning her into
+                            the most elusive spirit. When people gaze upon the beautiful figure
+                            reflected in the mirror, none realize that their lives have come to end."
+                        </p>
+                    </div>
+                </div>
+                <div class="hero-section" style="display: block;">
+                    <div class="hero-card">
+                        <img src="./Images/rogxild.png" alt="Rogxild" class="hero-image">
+                        <div class="hero-info">
+                            <div class="hero-name">Rogxild</div>
+                            <div class="hero-rating" data-tier="C">Tier: C</div>
+                        </div>
+                        <button class="detail-button" onclick="toggleDetails('hero02')">Details</button>
+                    </div>
+                    <div id="hero02" class="hero-details" style="display: none; block;">
+                        <h3 class="hero-details-heading">Stats</h3>
+                        <ul class="hero-stats-list">
+                            <li>
+                                <span class="stat-label">VIT:</span>
+                                <span class="stat-value">44572</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">STR:</span>
+                                <span class="stat-value">43891</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">INT:</span>
+                                <span class="stat-value">45208</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">DEX:</span>
+                                <span class="stat-value">43290</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">PDEF:</span>
+                                <span class="stat-value">22093</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">MDEF:</span>
+                                <span class="stat-value">22155</span>            
+                            </li>
+                            <li>
+                                <span class="stat-label">MAS:</span>
+                                <span class="stat-value">21487</span>            
+                            </li><li>
+                                <span class="stat-label">RES:</span>
+                                <span class="stat-value">21647</span>            
+                            </li>
+                        </ul>
+                        <h3 class="hero-details-heading">Story Info</h3>
+                        <p class="hero-description">
+                            "Some are born for battle, and she began to believe it
+                            the moment her longsword cleaved through lightningt."
+                            <br>                        
+                            "She drinks the strongest liquor, rides the swiftest steeds,
+                            slays the most enemies, and the cycle repeats."
+                            <br>
+                            <br>
+                            "Honor? Never crossed her mind. Treasure? She already has plenty.
+                            Lovers? Unnecessary."
+                            <br>
+                            "Only in the unending rhythm of slaughter and conquest can she feel alive."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gear" class="tab-content">
+            <h2>Gear</h2>
+            <p>Hero gear information will be listed here.</p>
+        </div>
+
+        <div id="equipment" class="tab-content">
+            <h2>Equipment</h2>
+            <p>Equipment information and stats will be displayed here.</p>
+        </div>
+
+        <div id="upgrade-requirements" class="tab-content">
+            <h2>Upgrade Requirements</h2>
+            <div class="upgrade-buttons">
+                <button onclick="showUpgradeImage('./Images/herostar.png')" style="background-image: url('./Images/stars.png');" data-text="Hero Star"></button>
+                <button onclick="showUpgradeImage('./Images/potential.png')" style="background-image: url('./Images/Upscaled-potential.png');" data-text="Potential"></button>
+                <button onclick="showUpgradeImage('./Images/transfer.png')" style="background-image: url('./Images/Upscaled-transfer.png');" data-text="Transfer"></button>
+                <button onclick="showUpgradeImage('./Images/upanishad.png')" style="background-image: url('./Images/Upscaled-upanishad.png');" data-text="Upanishad"></button>
+                <button onclick="showUpgradeImage('./Images/rebirth.png')" style="background-image: url('./Images/Upscaled-rebirth.png');" data-text="Rebirth"></button>
+                <button onclick="showUpgradeImage('./Images/divinity.png')" style="background-image: url('./Images/Upscaled-crown.png');" data-text="Divinity"></button>
+                <button onclick="showUpgradeImage('./Images/runestone.png')" style="background-image: url('./Images/Upscaled-runestone.png');" data-text="Runestone"></button>
+                <button onclick="showUpgradeImage('./Images/talisman.png')" style="background-image: url('./Images/Upscaled-origin.png');" data-text="Talisman"></button>
+                <button onclick="showUpgradeImage('./Images/spirits.png')" style="background-image: url('./Images/Upscaled-spirit.png');" data-text="Spirits"></button>
+                <button onclick="showUpgradeImage('./Images/starhubgear.png')" style="background-image: url('./Images/Upscaled-starhub.png');" data-text="Star Hub Gear"></button>
+                <button onclick="showUpgradeImage('./Images/treasure.png')" style="background-image: url('./Images/Upscaled-treasure.png');" data-text="Treasure"></button>
+                <button onclick="showUpgradeImage('./Images/pet.png')" style="background-image: url('./Images/Upscaled-pet.png');" data-text="Pet"></button>
+                <button onclick="showUpgradeImage('./Images/codex.png')" style="background-image: url('./Images/Upscaled-codex.png');" data-text="Codex"></button>
+                <button onclick="showUpgradeImage('./Images/energysource.png')" style="background-image: url('./Images/Upscaled-source.png');" data-text="Energy Source"></button>
+                <button onclick="showUpgradeImage('./Images/artifact.png')" style="background-image: url('./Images/Upscaled-artifact.png');" data-text="Artifact"></button>
+                <button onclick="showUpgradeImage('./Images/goddesskin.png')" style="background-image: url('./Images/Upscaled-goddess.png');" data-text="Goddess Skin"></button>
+            </div>
+        </div>
+
+        <div id="talisman" class="tab-content">
+            <h2>Talisman</h2>
+            <div class="talisman-images">
+                <img src="./Images/DMG1.png" alt="DMG1">
+                <img src="./Images/DMG2.png" alt="DMG2">
+                <img src="./Images/SURV1.png" alt="SURV1">
+                <img src="./Images/SURV2.png" alt="SURV2">
+                <img src="./Images/SPC1.png" alt="SPC1">
+                <img src="./Images/SPC2.png" alt="SPC2">
+            </div>
+        </div>
+
+        <div id="disclaimer-info" class="tab-content">
+            <h2>Disclaimer</h2>
+            <p>The "EverChest : Ultimate Guide" site is not affiliated with YOOZOO (SINGAPORE) PTE. LTD.</p>
+            <p>All contributors of this site do not gain any monetary profit from the The -EverChest : Ultimate Guide- site, nor any other compensation. All images and information is property of Yoozoo (Singapore), and their respective copyright holders. No copyright infringement is meant by us.</p>
+            <p>If you intend to use any information from this site for your own content, you must directly ask permission from one of the contributors through Discord. @moderator</p>
+            <p>This site made and edit by : L U N A</p>
+            <p>Credit to all contributors</p>
+        </div>
+    </div>
+
+    <div id="disclaimer">
+        <p>This site is not affiliated with Yoozoo (Singapore).</p>
+    </div>
+
+    <div id="upgrade-image-overlay" class="upgrade-image-overlay">
+        <div class="upgrade-image-container">
+            <img id="upgrade-image" src="" alt="Upgrade Image">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    function filterCompanion() {
+        const selectedTier = document.getElementById('tier-select').value;
+        const heroSections = document.querySelectorAll('.hero-section');
+        
+        heroSections.forEach(section => {
+            const heroTier = section.querySelector('.hero-rating').textContent.split(': ')[1];
+            if (selectedTier === 'all' || heroTier === selectedTier) {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        });
+    }
+
+    // Call filterCompanion after the hero data is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('heroes.json')
+            .then(response => response.json())
+            .then(data => {
+                // Existing code to create companion sections...
+                // After creating all hero sections, call filterCompanion
+                filterCompanion();
+            });
+    });
+    </script>
+</body>
+</html>
